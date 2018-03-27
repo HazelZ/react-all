@@ -2,8 +2,8 @@
 
 ## 服务器搭建  
 json-server  
-首先执行npm i json-server -g把json-server作为全局工具安装
-新建一个项目目录（后面文中所有的路径根目录都表示该项目目录）
+首先执行npm i json-server -g把json-server作为全局工具安装   
+新建一个项目目录（后面文中所有的路径根目录都表示该项目目录  
 在根目录中执行npm init初始化一个npm项目（会有一些项目配置需要你输入，一直敲回车就行了）
 npm i react react-dom react-router --save 安装基本的react依赖
 /public目录里存放项目的静态文件，图片等
