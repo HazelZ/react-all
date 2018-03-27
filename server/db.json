@@ -1,0 +1,42 @@
+{
+  "user": [
+    {
+      "uname": "sad",
+      "age": 232,
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "uname": "1222",
+      "age": 333,
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "uname": "ada",
+      "age": 2,
+      "gender": "famale",
+      "id": 3
+    }
+  ],
+  "book": [
+    {
+      "id": 10000,
+      "name": "JavaScript从入门到精通",
+      "price": 9990,
+      "owner_id": 10000
+    },
+    {
+      "id": 10001,
+      "name": "Java从入门到放弃",
+      "price": 199,
+      "owner_id": 10001
+    },
+    {
+      "id": 10002,
+      "name": "Java从入门到放弃",
+      "price": 199,
+      "owner_id": 10002
+    }
+  ]
+}
