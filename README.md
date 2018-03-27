@@ -27,4 +27,4 @@ A: 这是由于我们给Router组件传入了hashHistory，url中’#’及’#�
 Q: 为什么Home.js里要用Link组件而不是一个标准的a标签？   
 A: 上面说了，我们使用了hashHistory，正确的页面url中应该都是有一个’#’的，如果直接使用a标签，你需要这么写：<a href=”/#/user/add”>添加用户</a>。但是如果我们想要换成browserHistory，就需要把所有标签中的’#’去掉。使用react-router提供的Link组件可以让我们无视history之间的差异性，直接写标准的路由”/user/add”就可以了。此外，由于我们写的是单页面应用（SPA），Link组件会阻止页面的跳转（仅仅只是改变了url，然后改变了渲染的组件）。  
 
-##其他模块  
+## 其他模块  
