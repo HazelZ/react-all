@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import formProvider from '../utils/formProvider';
 import FormItem from '../components/FormItem';
+import UserEditor from '../components/UserEditors';
+
+import HomeLayout from '../layouts/HomeLayout';
 
 class UserAdd extends Component { 
   static contextTypes = {
@@ -41,83 +44,13 @@ class UserAdd extends Component {
   }
 
   render(){
-    const { form:{ uname,gender,age }, onFormChange} = this.props;
     return(
-      <div>
-        <header>
-          <h2>添加用户</h2>
-        </header>
-        <main>
-          <form onSubmit={(e) => this.handleSubmit(e)}>
-            <FormItem label='用户名' valid={uname.valid} error={uname.error}>
-              <input
-                type="text"
-                value={uname.value}
-                onChange={(e) => onFormChange('uname', e.target.value)} />
-            </FormItem>
-            <FormItem label='年龄' valid={age.valid} error={age.error}>
-              <input
-                type="number"
-                value={age.value || ''}
-                onChange={(e) => onFormChange('age', +e.target.value)} />
-            </FormItem>
-            <FormItem label='性别' valid={gender.valid} error={gender.error}>
-              <select name=""
-                value={gender.value}
-                onChange={(e) => onFormChange('gender', e.target.value)} >
-                <option value="">请选择</option>
-                <option value="male">男</option>
-                <option value="famale">女</option>
-              </select>
-            </FormItem>
-            <div className="form-block">
-              <input type="submit" value='提交'/>
-            </div>
-          </form>
-        </main>
-      </div>
+      <HomeLayout title='添加用户'>
+        <UserEditor />
+      </HomeLayout>
     )
   }
 }
 
-UserAdd = formProvider({
-  uname: {
-    defaultValue:'',
-    rules:[
-      {
-        pattern:function(value){
-          return value.length > 0;
-        },
-        error:"请输入用户名"
-      },
-      {
-        pattern: /^.{1,4}$/,
-        error:'用户名最多4个字符'
-      }
-    ]
-  },
-  age: {
-    defaultValue: 0,
-    rules:[
-      {
-       pattern:function(value){
-         return value >= 1 && value <= 100;
-       },
-       error:'请输入1~100的年龄' 
-      }
-    ]
-  },
-  gender:{
-    defaultValue:'',
-    rules:[
-      {
-        pattern:function(value){
-          return !!value;
-        },
-        error:'请选择性别'
-      }
-    ]
-  }
-})(UserAdd);
 
 export default UserAdd;
